@@ -67,31 +67,31 @@ const Hero = () => {
 
       {/* Content Container */}
       <div
-        className="relative z-10 w-full flex flex-col items-center gap-10 md:mt-16 mt-20"
+        className="relative z-10 w-full flex flex-col items-center gap-10 mt-16"
       >
         {/* Logo & Tagline */}
         <div
           ref={logoRef}
-          className="mx-auto px-6 lg:px-12 text-center animate-fade-in-up stagger-1 flex flex-col items-center md:gap-4"
+          className="md:mt-10 mx-auto px-6 lg:px-12 text-center animate-fade-in-up stagger-1 flex flex-col items-center md:gap-4"
         >
           <DynamicLogo
             src={`${import.meta.env.BASE_URL}logos/logo-orvanno-only.svg`}
-            className="h-24 md:h-32 text-primary mx-4 md:mx-2 md:max-w-max"
+            className="[@media(max-height:500px)]:h-14 h-24 md:h-32 text-primary mx-4 md:mx-2 max-w-max"
             alt="Orvanno"
             id="hero-logo"
           />
-          <span className="inline-block px-4 py-2 text-xs md:text-lg lg:text-xl uppercase tracking-[0.3em] text-primary border border-primary/30 bg-primary/5">
+          <span className="[@media(max-height:500px)]:hidden inline-block px-4 py-2 text-xs md:text-lg lg:text-xl uppercase tracking-[0.3em] text-primary border border-primary/30 bg-primary/5">
             Móveis Planejados de Alto Padrão
           </span>
         </div>
 
         {/* Subtitle & Buttons */}
-        <div className="md:mt-10 mt-[2vh] mx-auto px-6 lg:px-12 text-center mb-32">
+        <div className="[@media(max-height:500px)]:mt-0 [@media(max-height:900px)]:mt-1 mt-[2vh] md:mt-10 mx-auto px-6 lg:px-12 text-center mb-32">
           <div className="max-w-4xl mx-auto">
             {/* Subtitle */}
-            <p className="animate-fade-in-up stagger-3 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+            <p className="[@media(max-height:600px)]:hidden animate-fade-in-up stagger-3 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 font-light leading-relaxed">
               Criamos móveis sob medida que unem sofisticação, funcionalidade e
-              personalidade. <span className="hidden [@media(min-height:800px)]:inline">Cada projeto é uma obra de arte exclusiva.</span>
+              personalidade. <span className="[@media(max-height:800px)]:hidden">Cada projeto é uma obra de arte exclusiva.</span>
             </p>
 
             {/* CTA Buttons */}
@@ -125,11 +125,11 @@ const Hero = () => {
       </div>
 
       {/* Corner Accents */}
-      <div className="absolute md:top-24 top-[10vh] left-6 lg:left-12 md:w-20 md:h-20 w-[7vh] h-[7vh]">
+      <div className="absolute [@media(max-height:600px)]:top-4 top-[10vh] md:top-24 left-6 lg:left-12 md:w-20 md:h-20 w-[7vh] h-[7vh]">
         <div className="absolute top-0 left-0 w-full h-px bg-primary/30" />
         <div className="absolute top-0 left-0 w-px h-full bg-primary/30" />
       </div>
-      <div className="absolute md:top-24 top-[10vh] right-6 lg:right-12 md:w-20 md:h-20 w-[7vh] h-[7vh]">
+      <div className="absolute [@media(max-height:600px)]:top-4 top-[10vh] md:top-24 right-6 lg:right-12 md:w-20 md:h-20 w-[7vh] h-[7vh]">
         <div className="absolute top-0 right-0 w-full h-px bg-primary/30" />
         <div className="absolute top-0 right-0 w-px h-full bg-primary/30" />
       </div>
