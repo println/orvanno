@@ -95,6 +95,10 @@ export default {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        "shine-once": {
+          "0%": { transform: "translateX(-150%) skewX(-12deg)" },
+          "100%": { transform: "translateX(150%) skewX(-12deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -104,6 +108,7 @@ export default {
         "slide-in-right": "slide-in-right 0.8s ease-out forwards",
         "zoom-in": "zoom-in 0.6s ease-out forwards",
         shimmer: "shimmer 2s linear infinite",
+        "shine-once": "shine-once 0.7s ease-in-out",
       },
     },
   },
