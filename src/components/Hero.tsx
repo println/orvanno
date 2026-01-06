@@ -117,8 +117,8 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-0 w-full flex justify-center scroll-indicator">
-        <a href="#portfolio" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+      <div className="absolute bottom-11 left-0 w-full flex justify-center scroll-indicator">
+        <a href="#portfolio" className=" p-2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
           <span className="text-xs uppercase tracking-widest">Scroll</span>
           <ChevronDown className="w-5 h-5" />
         </a>
