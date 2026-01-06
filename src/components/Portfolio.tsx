@@ -38,8 +38,25 @@ const projects = [
 const Portfolio = () => {
   return (
     <section id="portfolio" className="py-24 lg:py-32 bg-background relative">
+
+
       {/* Decorative Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-primary/50 to-transparent" />
+
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full"
+          style={{
+            backgroundImage: `repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 2px,
+              hsl(45 100% 50%) 2px,
+              hsl(45 100% 50%) 4px
+            )`,
+            backgroundSize: '40px 40px'
+          }}
+        />
+      </div>
 
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
@@ -63,9 +80,8 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`group relative overflow-hidden img-zoom ${
-                project.size === "large" ? "md:row-span-2" : ""
-              }`}
+              className={`group relative overflow-hidden img-zoom ${project.size === "large" ? "md:row-span-2" : ""
+                }`}
             >
               {/* Image */}
               <div className={`relative ${project.size === "large" ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
