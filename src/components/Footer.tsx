@@ -42,13 +42,19 @@ const Footer = () => {
               Links Rápidos
             </h4>
             <ul className="space-y-3">
-              {["Início", "Projetos", "Diferenciais", "Sobre", "Contato"].map((item) => (
-                <li key={item}>
+              {[
+                { label: "Início", href: "#hero" },
+                { label: "Projetos", href: "#portfolio" },
+                { label: "Diferenciais", href: "#features" },
+                { label: "Sobre", href: "#about" },
+                { label: "Contato", href: "#contact" },
+              ].map((item) => (
+                <li key={item.label}>
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={item.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}
