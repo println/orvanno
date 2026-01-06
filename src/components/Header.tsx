@@ -50,7 +50,7 @@ const Header = () => {
             }}
           >
             <DynamicLogo
-              src="/logos/logo-orvanno-only.svg"
+              src={`${import.meta.env.BASE_URL}logos/logo-orvanno-only.svg`}
               className="h-8 lg:h-9 text-primary w-auto"
               alt="Orvanno"
             />

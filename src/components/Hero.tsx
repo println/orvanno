@@ -75,7 +75,7 @@ const Hero = () => {
           className="mx-auto px-6 lg:px-12 text-center animate-fade-in-up stagger-1 flex flex-col items-center md:gap-4"
         >
           <DynamicLogo
-            src="/logos/logo-orvanno-only.svg"
+            src={`${import.meta.env.BASE_URL}logos/logo-orvanno-only.svg`}
             className="h-24 md:h-32 text-primary mx-4 md:mx-2 md:max-w-max"
             alt="Orvanno"
             id="hero-logo"

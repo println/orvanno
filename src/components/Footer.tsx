@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <DynamicLogo
-              src="/logos/logo-orvanno-only.svg"
+              src={`${import.meta.env.BASE_URL}logos/logo-orvanno-only.svg`}
               className="h-6 text-primary mb-6"
               alt="Orvanno"
             />
