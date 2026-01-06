@@ -45,42 +45,32 @@ const DynamicLogo = ({ src, className = "", alt = "Logo", id }: DynamicLogoProps
     return (
         <div
             id={id}
-            className={`relative group inline-flex items-center justify-center [&_svg]:w-full [&_svg]:h-full [&_svg]:fill-current ${className}`}
+            className={`relative group inline-flex items-center justify-center [&_svg]:w-full [&_svg]:h-full ${className}`}
             role="img"
             aria-label={alt}
             onMouseEnter={handleMouseEnter}
         >
+            {/* Base Layer - Original Color */}
             <div
-                className="contents"
+                className="contents [&_svg]:fill-current"
                 dangerouslySetInnerHTML={{ __html: svgContent }}
             />
-            {/* Shine effect container */}
+
+            {/* Overlay Layer - White with Gold Glow + Gradient Mask Animation */}
             <div
-                className="absolute inset-0 pointer-events-none"
+                className={`absolute inset-0 [&_svg]:fill-white pointer-events-none ${isAnimating ? 'animate-shine-mask' : 'hidden'}`}
                 style={{
-                    filter: "drop-shadow(0 0 2px hsl(var(--gold) / 0.6)) drop-shadow(0 0 5px hsl(var(--gold) / 0.4))",
+                    filter: "drop-shadow(0 0 2px hsl(var(--gold) / 0.8)) drop-shadow(0 0 5px hsl(var(--gold) / 0.6))",
+                    maskImage: "linear-gradient(110deg, transparent 35%, black 50%, transparent 65%)",
+                    WebkitMaskImage: "linear-gradient(110deg, transparent 35%, black 50%, transparent 65%)",
+                    maskSize: "200% 100%",
+                    WebkitMaskSize: "200% 100%",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskRepeat: "no-repeat",
                 }}
-            >
-                <div
-                    className="w-full h-full"
-                    style={{
-                        maskImage: `url(${src})`,
-                        WebkitMaskImage: `url(${src})`,
-                        maskSize: "contain",
-                        WebkitMaskSize: "contain",
-                        maskRepeat: "no-repeat",
-                        WebkitMaskRepeat: "no-repeat",
-                        maskPosition: "center",
-                        WebkitMaskPosition: "center",
-                    }}
-                >
-                    {/* Shine gradient - Moving Animation */}
-                    <div
-                        className={`absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/90 to-transparent -translate-x-full ${isAnimating ? 'animate-shine-once' : ''}`}
-                        onAnimationEnd={() => setIsAnimating(false)}
-                    />
-                </div>
-            </div>
+                dangerouslySetInnerHTML={{ __html: svgContent }}
+                onAnimationEnd={() => setIsAnimating(false)}
+            />
         </div>
     );
 };

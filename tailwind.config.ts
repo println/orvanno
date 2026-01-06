@@ -99,6 +99,10 @@ export default {
           "0%": { transform: "translateX(-150%) skewX(-12deg)" },
           "100%": { transform: "translateX(150%) skewX(-12deg)" },
         },
+        "shine-mask": {
+          "0%": { maskPosition: "150%" },
+          "100%": { maskPosition: "-50%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -109,6 +113,7 @@ export default {
         "zoom-in": "zoom-in 0.6s ease-out forwards",
         shimmer: "shimmer 2s linear infinite",
         "shine-once": "shine-once 0.7s ease-in-out",
+        "shine-mask": "shine-mask 0.9s ease-in-out forwards",
       },
     },
   },
